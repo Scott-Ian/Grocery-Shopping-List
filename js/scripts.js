@@ -4,10 +4,16 @@ $("document").ready(function() {
 
     const unSlicedList = $("textarea#food").val();
 
-    console.log(unSlicedList);
     
     const slicedFood = unSlicedList.split(","); 
-    slicedFood.forEach(function (food) {
+    
+    let upperCaseSlicedFood = [];
+    slicedFood.forEach(function(food) {
+      upperCaseSlicedFood.push(food.toUpperCase());
+    });
+    upperCaseSlicedFood.sort();
+
+    upperCaseSlicedFood.forEach(function (food) {
       $(".shopping-list").append(`<li> ${food} </li>`);
     });
 
